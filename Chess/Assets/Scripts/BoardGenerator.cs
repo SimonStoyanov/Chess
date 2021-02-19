@@ -99,6 +99,7 @@ public class BoardGenerator : MonoBehaviour
                 GameObject pieceToDraw = new GameObject("piece");
                 pieceToDraw.transform.position = new Vector2(-3.5f + file, -3.5f + rank);
                 pieceToDraw.AddComponent<SpriteRenderer>().sprite = usedPiece;
+                pieceToDraw.GetComponent<SpriteRenderer>().sortingOrder = 1;
                 pieceToDraw.AddComponent<BoxCollider2D>().size = new Vector2(1, 1);
                 pieceToDraw.AddComponent<MovePiece>();
 
