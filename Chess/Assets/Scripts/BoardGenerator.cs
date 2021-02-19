@@ -9,6 +9,8 @@ public class BoardGenerator : MonoBehaviour
     public Sprite[] whitePieceSprites;
     public Sprite[] blackPieceSprites;
 
+    public GameObject squareHighlight;
+
     public Color lightSquare;
     public Color darkSquare;
 
@@ -101,7 +103,7 @@ public class BoardGenerator : MonoBehaviour
                 pieceToDraw.AddComponent<SpriteRenderer>().sprite = usedPiece;
                 pieceToDraw.GetComponent<SpriteRenderer>().sortingOrder = 1;
                 pieceToDraw.AddComponent<BoxCollider2D>().size = new Vector2(1, 1);
-                pieceToDraw.AddComponent<MovePiece>();
+                pieceToDraw.AddComponent<MovePiece>().highlighter = squareHighlight;
 
                 iterator++;
             }
